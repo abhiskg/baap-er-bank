@@ -11,7 +11,10 @@ depositBtn.addEventListener("click", () => {
   const depositField = document.querySelector(
     "#deposit-field"
   ) as HTMLInputElement;
-  deposit.textContent = depositField.value;
+  const depositAmount = parseFloat(deposit.textContent!);
+  const newAmount = depositAmount + parseFloat(depositField.value);
+  deposit.textContent = newAmount.toString();
+  depositField.value = "";
 });
 
 const withdrawBtn = document.querySelector(

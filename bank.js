@@ -7,7 +7,10 @@ balance.textContent = preBalance;
 const depositBtn = document.querySelector("#deposit-btn");
 depositBtn.addEventListener("click", () => {
     const depositField = document.querySelector("#deposit-field");
-    deposit.textContent = depositField.value;
+    const depositAmount = parseFloat(deposit.textContent);
+    const newAmount = depositAmount + parseFloat(depositField.value);
+    deposit.textContent = newAmount.toString();
+    depositField.value = "";
 });
 const withdrawBtn = document.querySelector("#withdraw-btn");
 withdrawBtn.addEventListener("click", () => {
