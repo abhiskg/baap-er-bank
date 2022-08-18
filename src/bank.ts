@@ -7,6 +7,12 @@ depositBtn.addEventListener("click", () => {
   ) as HTMLInputElement;
   const deposit = document.querySelector("#deposit") as HTMLSpanElement;
 
+  if (isNaN(parseFloat(depositField.value))) {
+    alert("please provide a valid no");
+    depositField.value = "";
+    return;
+  }
+
   const depositAmount = parseFloat(deposit.textContent!);
   const newDepositAmount = depositAmount + parseFloat(depositField.value);
   deposit.textContent = newDepositAmount.toString();
@@ -26,6 +32,18 @@ withdrawBtn.addEventListener("click", () => {
   const withdrawField = document.querySelector(
     "#withdraw-field"
   ) as HTMLInputElement;
+
+  if (isNaN(parseFloat(withdrawField.value))) {
+    alert("please provide a valid no");
+    withdrawField.value = "";
+    return;
+  }
+
+  if (withdrawField.value > balance.textContent!) {
+    alert("Insufficient Balance");
+    withdrawField.value = "";
+    return;
+  }
 
   const withdrawAmount = parseFloat(withdraw.textContent!);
   const newWithdrawAmount = withdrawAmount + parseFloat(withdrawField.value);
