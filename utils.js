@@ -3,10 +3,6 @@ function getInputValueById(inputId) {
     const inputField = document.getElementById(inputId);
     const inputValue = parseFloat(inputField.value);
     inputField.value = "";
-    if (isNaN(inputValue)) {
-        alert("please provide a valid no");
-        return;
-    }
     return inputValue;
 }
 function getElementValueById(elementId) {
